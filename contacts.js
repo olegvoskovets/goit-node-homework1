@@ -3,10 +3,10 @@ const path = require("path");
 
 const { nanoid } = require("nanoid");
 
-const contactsPath = path.join(__dirname, "./db/contacts.json");
+const contactsPath = path.join(__dirname, "db", "contacts.json");
 
 const listContacts = async () => {
-  const contacts = await fs.readFile(contactsPath);
+  const contacts = await fs.readFile(contactsPath, "utf-8");
 
   return JSON.parse(contacts);
 };
@@ -59,5 +59,3 @@ module.exports = {
   updateContactId,
   removeContact,
 };
-
-// listContacts();
