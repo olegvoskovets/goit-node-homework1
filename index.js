@@ -9,12 +9,12 @@ const {
 const { program } = require("commander");
 
 program
-  .option("--action <type>")
-  .option("--id <type>")
-  .option("--name <type>")
-  .option("--tweets <type>")
-  .option("--followers <type>")
-  .option("--avatar <type>");
+  .option("-a,--action <type>")
+  .option("-i,--id <type>")
+  .option("-n,--name <type>")
+  .option("-t,--tweets <type>")
+  .option("-f,--followers <type>")
+  .option("-av,--avatar <type>");
 
 program.parse(process.argv);
 const argv = program.opts();
@@ -59,28 +59,3 @@ const incoveAction = async ({
 };
 
 incoveAction(argv);
-
-// incoveAction({ action: "list" });
-// incoveAction({ action: "get", id: "3" });
-
-// incoveAction({
-//   action: "add",
-//   name: "Djon Liscko",
-//   tweets: 305,
-//   followers: 100000,
-//   avatar: "./images/user13.png",
-// });
-
-// incoveAction({
-//   action: "update",
-//   name: "Djon",
-//   tweets: 5,
-//   followers: 1,
-//   avatar: "./images/user1.png",
-//   id: "1",
-// });
-
-// incoveAction({
-//   action: "remove",
-//   id: "4qVwSOOE5Pwx57UWguzzF",
-// });
